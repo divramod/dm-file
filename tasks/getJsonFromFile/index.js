@@ -15,9 +15,9 @@ task.start = co.wrap(function*(filePath) {
         var filePath = filePath || process.argv[3] || undefined;
         run(filePath);
     } catch (e) {
-        console.log("Filename: ", __filename, "\n", e.stack);
         result.success = false;
         result.error = e;
+        console.log("Filename: ", __filename, "\n", e.stack);
     }
     return yield Promise.resolve(result);
 }); // task.start()
@@ -37,6 +37,7 @@ var run = co.wrap(function*(filePath) {
             /* handle error */
             result.success = false;
             result.error = e;
+            console.log("Filename: ", __filename, "\n", e.stack);
         }
     }
 }); // run

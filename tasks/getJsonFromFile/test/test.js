@@ -1,8 +1,9 @@
 var should = require('chai').should();
 var start = require('./../index.js').start;
+var colors = require("colors");
 
 // =========== [ dm-file TESTS ] ===========
-describe('getJsonFromFile', function() {
+describe('getJsonFromFile'.red, function() {
 
     // =========== [ success ] ===========
     it('should return valid json', function* testStart() {
@@ -13,7 +14,7 @@ describe('getJsonFromFile', function() {
     });
 
     // =========== [ error ] ===========
-    it('should return error', function* testStart() {
+    it('should return error on invalid json', function* testStart() {
         var result =
             yield start(__dirname + "/invalid.json");
         result.taskname.should.equal("getJsonFromFile");

@@ -9,17 +9,23 @@ describe('getJsonFromFile'.red, function() {
     it('should return valid json', function* testStart() {
         var result =
             yield start(__dirname + "/valid.json");
-        result.taskname.should.equal("getJsonFromFile");
-        result.success.should.equal(true);
+        result.should.be.an("object");
     });
 
     // =========== [ error ] ===========
     it('should return error on invalid json', function* testStart() {
-        var result =
+        var error =
             yield start(__dirname + "/invalid.json");
-        result.taskname.should.equal("getJsonFromFile");
-        result.success.should.equal(false);
-        result.error.message.should.equal("Unexpected string");
+        error.should.be.an("object");
+        error.message.should.equal("Unexpected string");
+    });
+
+    // =========== [ error ] ===========
+    it('should return error on File not existent', function* testStart() {
+        var error =
+            yield start(__dirname + "/nofile");
+        error.should.be.an("object");
+        error.message.should.equal("DmError: File not existent");
     });
 
 });

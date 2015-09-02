@@ -1,43 +1,45 @@
 {
-    "private": false,
-    "name": "dm-file",
-    "shortcut": "dmf",
-    "version": "0.1.0",
-    "description": "A helper for working with files.",
-    "main": "index.js",
-    "scripts": {
-        "test": "mocha --harmony --require co-mocha --watch --reporter landing",
-        "start": "node --harmony ./bin/dm-file"
-    },
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/divramod/dm-file.git"
-    },
-    "keywords": [
-        "npm",
-        "template"
-    ],
-    "author": "Arvid Petermann <arvidpetermann@gmail.com> (http://arvidpetermann.com/)",
-    "license": "ISC",
-    "bugs": {
-        "url": "https://github.com/divramod/dm-file/issues"
-    },
-    "homepage": "https://github.com/divramod/dm-file",
-    "devDependencies": {
-        "chai": "^2.1.0",
-        "co-mocha": "^1.1.0",
-        "mocha": "^2.1.0"
-    },
-    "dependencies": {
-        "co": "^4.4.0",
-        "colors": "^1.1.2",
-        "dm-npm": "^0.1.14",
-        "shelljs": "^0.5.3"
-    },
-    "bin": {
-        "dmf": "./bin/dm-file",
-        "dm-file": "./bin/dm-file",
-        "gdmf": "./bin/gdm-file",
-        "dmfg": "./bin/gdm-file"
-    }
+  "private": false,
+  "name": "dm-file",
+  "shortcut": "dmf",
+  "version": "0.1.0",
+  "description": "A helper for working with files.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --harmony --require co-mocha --watch --reporter landing",
+    "start": "node --harmony ./bin/dm-file"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/divramod/dm-file.git"
+  },
+  "keywords": [
+    "npm",
+    "template"
+  ],
+  "author": "Arvid Petermann <arvidpetermann@gmail.com> (http://arvidpetermann.com/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/divramod/dm-file/issues"
+  },
+  "homepage": "https://github.com/divramod/dm-file",
+  "devDependencies": {
+    "chai": "^2.1.0",
+    "co-mocha": "^1.1.0",
+    "mocha": "^2.1.0"
+  },
+  "dependencies": {
+    "co": "^4.4.0",
+    "colors": "^1.1.2",
+    "dm-npm": "^0.1.14",
+    "pretty-print": "^1.0.0",
+    "prettyjson": "^1.1.3",
+    "shelljs": "^0.5.3"
+  },
+  "bin": {
+    "dmf": "./bin/dm-file",
+    "dm-file": "./bin/dm-file",
+    "gdmf": "./bin/gdm-file",
+    "dmfg": "./bin/gdm-file"
+  }
 }

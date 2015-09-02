@@ -24,7 +24,7 @@ npm install dm-file --save # for programmatically use
 
 #### getJsonFromFile global usage
 ```
-dmf [getJsonFromFile|gj]
+dmf [getJsonFromFile|gj] file_path [print]
 ```
 
 #### getJsonFromFile programmatically usage

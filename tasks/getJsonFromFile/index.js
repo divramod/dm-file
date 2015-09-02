@@ -1,43 +1,59 @@
 // =========== [ REQUIRE ] ===========
 var co = require("co");
 var fs = require("fs");
+var print = require("pretty-print");
+var prettyjson = require('prettyjson');
+var dmPath = require("dm-path");
 require("shelljs/global");
 
 // =========== [ MODULE DEFINE ] ===========
 var task = {};
-var result = {
-    "taskname": "getJsonFromFile"
-};
 
 // =========== [ task.start() ] ===========
 task.start = co.wrap(function*(filePath) {
+    process.env.debug = true; // for debugging purposes
     try {
         var filePath = filePath || process.argv[3] || undefined;
-        run(filePath);
+        filePath = dmPath.replace(filePath);
+
+        var result =
+            yield run(filePath); // call the run method
+        if (process.argv.indexOf("print") > -1) {
+            console.log(prettyjson.render(result, {
+                keysColor: 'green',
+                dashColor: 'white',
+                stringColor: 'yellow',
+                numberColor: 'red'
+            }, 2));
+        }
+        return result;
     } catch (e) {
-        result.success = false;
-        result.error = e;
-        console.log("Filename: ", __filename, "\n", e.stack);
+        if (process.env.debug === "true") {
+            console.log("Filename: ", __filename, "\n", e.stack);
+        }
+        return e;
     }
-    return yield Promise.resolve(result);
 }); // task.start()
 
 // =========== [ run ] ===========
 var run = co.wrap(function*(filePath) {
     if (!test("-f", filePath)) {
-        result.success = false;
-        result.error = {
-            message: "The File with path " + filePath + " doesn't exists!"
+        var e = {
+            message: "DmError: File not existent"
         }
+        if (process.env.debug === "true") {
+            console.log("Filename: ", __filename, "\n", e.message);
+        }
+        return e;
     } else {
         try {
-            result.data = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-            result.success = true;
+            var object = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+            return object;
         } catch (e) {
-            /* handle error */
-            result.success = false;
-            result.error = e;
-            console.log("Filename: ", __filename, "\n", e.stack);
+            if (process.env.debug === "true") {
+                console.log("Filename: ", __filename, "\n", e.stack);
+            }
+            return e;
         }
     }
 }); // run

@@ -1,0 +1,12 @@
+{
+    "inittest": {
+        "github": {
+            "username": "divramod"
+        }
+    }
+        "path": "~/code/dm"
+    },
+    "linkConfigFiles": {
+        "path": "~/dotfiles/dm"
+    }
+}

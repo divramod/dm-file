@@ -1,0 +1,119 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'publish' ]
+2 info using npm@2.5.1
+3 info using node@v0.12.0
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec { raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/home/mod/code/dm/dm-file',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /home/mod/.npm/dm-file/0.1.1/package.tgz not in flight; packing
+9 verbose tar pack [ '/home/mod/.npm/dm-file/0.1.1/package.tgz',
+9 verbose tar pack   '/home/mod/code/dm/dm-file' ]
+10 verbose tarball /home/mod/.npm/dm-file/0.1.1/package.tgz
+11 verbose folder /home/mod/code/dm/dm-file
+12 info prepublish dm-file@0.1.1
+13 verbose addLocalTarball adding from inside cache /home/mod/.npm/dm-file/0.1.1/package.tgz
+14 silly cache afterAdd dm-file@0.1.1
+15 verbose afterAdd /home/mod/.npm/dm-file/0.1.1/package/package.json not in flight; writing
+16 verbose afterAdd /home/mod/.npm/dm-file/0.1.1/package/package.json written
+17 silly publish { private: false,
+17 silly publish   name: 'dm-file',
+17 silly publish   shortcut: 'dmf',
+17 silly publish   version: '0.1.1',
+17 silly publish   description: 'A helper for working with files.',
+17 silly publish   main: 'index.js',
+17 silly publish   scripts:
+17 silly publish    { test: 'mocha --harmony --require co-mocha --watch --reporter landing',
+17 silly publish      start: 'node --harmony ./bin/dm-file' },
+17 silly publish   repository: { type: 'git', url: 'https://github.com/divramod/dm-file.git' },
+17 silly publish   keywords: [ 'npm', 'template' ],
+17 silly publish   author:
+17 silly publish    { name: 'Arvid Petermann',
+17 silly publish      email: 'arvidpetermann@gmail.com',
+17 silly publish      url: 'http://arvidpetermann.com/' },
+17 silly publish   license: 'ISC',
+17 silly publish   bugs: { url: 'https://github.com/divramod/dm-file/issues' },
+17 silly publish   homepage: 'https://github.com/divramod/dm-file',
+17 silly publish   devDependencies: { chai: '^2.1.0', 'co-mocha': '^1.1.0', mocha: '^2.1.0' },
+17 silly publish   dependencies:
+17 silly publish    { co: '^4.4.0',
+17 silly publish      colors: '^1.1.2',
+17 silly publish      'dm-npm': '^0.1.14',
+17 silly publish      'pretty-print': '^1.0.0',
+17 silly publish      prettyjson: '^1.1.3',
+17 silly publish      shelljs: '^0.5.3' },
+17 silly publish   bin:
+17 silly publish    { dmf: './bin/dm-file',
+17 silly publish      'dm-file': './bin/dm-file',
+17 silly publish      gdmf: './bin/gdm-file',
+17 silly publish      dmfg: './bin/gdm-file' },
+17 silly publish   readme: '# dm-file\nA helper for working with files.\n\n## Description\n* started project --> look at the [todos](todo.md) to see what will be done\n\n## Run\n```\ndmf [task]\ndm-file [task]\n```\n\n## Install\n\n```\nnpm install dm-file -g # for global use\nnpm install dm-file --save # for programmatically use\n```\n\n## Tasks\n\n### [getJsonFromFile](tasks/getJsonFromFile/index.js)\n* Will parse Json from a file. Returns error when something happens. Returns json when Json got parsed.\n\n#### getJsonFromFile global usage\n```\ndmf [getJsonFromFile|gj] file_path [print]\n```\n\n#### getJsonFromFile programmatically usage\n```javascript\nvar getJsonFromFile = require("dm-file").getJsonFromFile;\nvar getJsonFromFileResult = getJsonFromFile.start();\n```\n\n#### getJsonFromFile steps\n\n#### getJsonFromFile features\n\n#### getJsonFromFile config\n```javascript\n{\n    "getJsonFromFile": {\n    }\n}\n```\n\n## Config\n* you can place a .dm-file.json file in your home directory (~/.dm-file.json)\n* the following things are allowed at the moment\n```javascript\n{\n}\n```\n\n## Lessons Learned\n',
+17 silly publish   readmeFilename: 'README.md',
+17 silly publish   gitHead: '76b80d455efc05142627ed35755184a92843a02e',
+17 silly publish   _id: 'dm-file@0.1.1',
+17 silly publish   _shasum: 'ae92d967d98ad2ecaca16e44a4c7c52363a0624e',
+17 silly publish   _from: '.' }
+18 silly mapToRegistry name dm-file
+19 silly mapToRegistry using default registry
+20 silly mapToRegistry registry https://registry.npmjs.org/
+21 silly mapToRegistry uri https://registry.npmjs.org/dm-file
+22 verbose publish registryBase https://registry.npmjs.org/
+23 silly publish uploading /home/mod/.npm/dm-file/0.1.1/package.tgz
+24 verbose request uri https://registry.npmjs.org/dm-file
+25 verbose request sending authorization for write operation
+26 info attempt registry request try #1 at 10:30:00 PM
+27 verbose request using bearer token for auth
+28 verbose request id dc30ff4cbfd8c029
+29 http request PUT https://registry.npmjs.org/dm-file
+30 http 500 https://registry.npmjs.org/dm-file
+31 info retry will retry, error on last attempt: Error: "exited with status code 1" : dm-file
+32 info attempt registry request try #2 at 10:30:15 PM
+33 verbose request using bearer token for auth
+34 http request PUT https://registry.npmjs.org/dm-file
+35 http 500 https://registry.npmjs.org/dm-file
+36 info retry will retry, error on last attempt: Error: "exited with status code 1" : dm-file
+37 info attempt registry request try #3 at 10:31:19 PM
+38 verbose request using bearer token for auth
+39 http request PUT https://registry.npmjs.org/dm-file
+40 http 500 https://registry.npmjs.org/dm-file
+41 verbose headers { 'content-type': 'application/json',
+41 verbose headers   'cache-control': 'max-age=0',
+41 verbose headers   'content-length': '57',
+41 verbose headers   'accept-ranges': 'bytes',
+41 verbose headers   date: 'Wed, 02 Sep 2015 20:31:23 GMT',
+41 verbose headers   via: '1.1 varnish',
+41 verbose headers   connection: 'keep-alive',
+41 verbose headers   'x-served-by': 'cache-fra1220-FRA',
+41 verbose headers   'x-cache': 'MISS',
+41 verbose headers   'x-cache-hits': '0',
+41 verbose headers   'x-timer': 'S1441225879.904146,VS0,VE3353' }
+42 verbose request invalidating /home/mod/.npm/registry.npmjs.org/dm-file on PUT
+43 error publish Failed PUT 500
+44 verbose stack Error: "exited with status code 1" : dm-file
+44 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:254:14)
+44 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:178:14)
+44 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:344:22)
+44 verbose stack     at Request.emit (events.js:110:17)
+44 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1239:14)
+44 verbose stack     at Request.emit (events.js:129:20)
+44 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1187:12)
+44 verbose stack     at IncomingMessage.emit (events.js:129:20)
+44 verbose stack     at _stream_readable.js:908:16
+44 verbose stack     at process._tickCallback (node.js:355:11)
+45 verbose statusCode 500
+46 verbose pkgid dm-file
+47 verbose cwd /home/mod/code/dm/dm-file
+48 error Linux 3.16.0-41-generic
+49 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "publish"
+50 error node v0.12.0
+51 error npm  v2.5.1
+52 error code E500
+53 error "exited with status code 1" : dm-file
+54 error If you need help, you may report this error at:
+54 error     <http://github.com/npm/npm/issues>
+55 verbose exit [ 1, true ]

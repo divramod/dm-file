@@ -9,15 +9,13 @@ require("shelljs/global");
 // =========== [ MODULE DEFINE ] ===========
 var task = {};
 
-// =========== [ task.start() ] ===========
-task.start = co.wrap(function*(filePath) {
+task.start = function start(filePath) {
     process.env.debug = true; // for debugging purposes
     try {
         var filePath = filePath || process.argv[3] || undefined;
         filePath = dmPath.replace(filePath);
 
-        var result =
-            yield run(filePath); // call the run method
+        var result = run(filePath); // call the run method
         if (process.argv.indexOf("print") > -1) {
             console.log(prettyjson.render(result, {
                 keysColor: 'green',
@@ -33,10 +31,10 @@ task.start = co.wrap(function*(filePath) {
         }
         return e;
     }
-}); // task.start()
+}
 
 // =========== [ run ] ===========
-var run = co.wrap(function*(filePath) {
+var run = function(filePath) {
     if (!test("-f", filePath)) {
         var e = {
             message: "DmError: File not existent"
@@ -56,7 +54,7 @@ var run = co.wrap(function*(filePath) {
             return e;
         }
     }
-}); // run
+}; // run
 
 // =========== [ MODULE EXPORT ] ===========
 module.exports = task;

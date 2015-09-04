@@ -16,6 +16,11 @@ jobs.index = co.wrap(function*() {
 
         // automatically add tasks here
 
+        // =========== [ jsonKey ] ===========
+        else if (['jsonKey','jk'].indexOf(argv2) > -1) {
+            var task = require("./tasks/jsonKey/index.js");
+            task.start();
+        }
         // =========== [ getStringFromFile ] ===========
         else if (['getStringFromFile'].indexOf(argv2) > -1) {
             var task = require("./tasks/getStringFromFile/index.js");

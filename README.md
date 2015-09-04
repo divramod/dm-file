@@ -19,6 +19,32 @@ npm install dm-file --save # for programmatically use
 
 ## Tasks
 
+### [jsonKey](tasks/jsonKey/index.js)
+* Returns a key from a object in a json file if defined, if not return undefined
+
+#### jsonKey global usage
+```
+dmf [jsonKey|jk]
+```
+
+#### jsonKey programmatically usage
+```javascript
+var jsonKey = require("dm-file").jsonKey;
+var jsonKeyResult = jsonKey.start();
+```
+
+#### jsonKey steps
+
+#### jsonKey features
+
+#### jsonKey config
+```javascript
+{
+    "jsonKey": {
+    }
+}
+```
+
 ### [getStringFromFile](tasks/getStringFromFile/index.js)
 * returns a string from a search pattern
 

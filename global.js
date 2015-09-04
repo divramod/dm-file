@@ -16,6 +16,11 @@ jobs.index = co.wrap(function*() {
 
         // automatically add tasks here
 
+        // =========== [ getStringFromFile ] ===========
+        else if (['getStringFromFile'].indexOf(argv2) > -1) {
+            var task = require("./tasks/getStringFromFile/index.js");
+            task.start();
+        }
         // =========== [ getJsonFromFile ] ===========
         else if (['getJsonFromFile','gj'].indexOf(argv2) > -1) {
             var task = require("./tasks/getJsonFromFile/index.js");

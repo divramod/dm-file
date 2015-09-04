@@ -32,6 +32,7 @@
     "co": "^4.4.0",
     "colors": "^1.1.2",
     "dm-npm": "^0.1.14",
+    "dm-shell": "^0.1.0",
     "pretty-print": "^1.0.0",
     "prettyjson": "^1.1.3",
     "shelljs": "^0.5.3"

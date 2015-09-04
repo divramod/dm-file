@@ -1,0 +1,7 @@
+{
+    "version": "0.0.10",
+    "server": "kegelapp.meteor.com",
+    "buildDestination": "../app_build",
+    "keyPath": "~/.keystore/kegelapp",
+    "alias": "kegelapp"
+}

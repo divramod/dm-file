@@ -19,6 +19,32 @@ npm install dm-file --save # for programmatically use
 
 ## Tasks
 
+### [getStringFromFile](tasks/getStringFromFile/index.js)
+* returns a string from a search pattern
+
+#### getStringFromFile global usage
+```
+dmf [getStringFromFile]
+```
+
+#### getStringFromFile programmatically usage
+```javascript
+var getStringFromFile = require("dm-file").getStringFromFile;
+var getStringFromFileResult = getStringFromFile.start();
+```
+
+#### getStringFromFile steps
+
+#### getStringFromFile features
+
+#### getStringFromFile config
+```javascript
+{
+    "getStringFromFile": {
+    }
+}
+```
+
 ### [getJsonFromFile](tasks/getJsonFromFile/index.js)
 * Will parse Json from a file. Returns error when something happens. Returns json when Json got parsed.
 
